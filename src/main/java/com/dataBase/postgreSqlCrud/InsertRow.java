@@ -18,6 +18,12 @@ public class InsertRow {
             System.out.println("Inserted successfully!");
         } catch (SQLException e) {
             System.out.println(e);
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
         }
     }
 }

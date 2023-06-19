@@ -24,6 +24,12 @@ public class ReadTable {
             }
         } catch (SQLException e) {
             System.out.println(e);
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
         }
     }
 }

@@ -20,6 +20,12 @@ public class CreatTable {
             System.out.println("Table has been created successfully!");
         } catch (SQLException e) {
             System.out.println(e);
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
         }
     }
 }
