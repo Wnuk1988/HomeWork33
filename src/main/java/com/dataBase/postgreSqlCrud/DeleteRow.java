@@ -12,17 +12,11 @@ public class DeleteRow {
         PreparedStatement statement = null;
         try {
             statement = connection.prepareStatement("DELETE FROM users WHERE id=?");
-            statement.setInt(1, 1);
+            statement.setInt(1,1);
             int result = statement.executeUpdate();
             System.out.println(result);
         } catch (SQLException e) {
             System.out.println(e);
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                System.out.println(e);
-            }
         }
     }
 }
