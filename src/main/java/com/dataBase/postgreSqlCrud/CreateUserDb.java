@@ -32,7 +32,7 @@ public class CreateUserDb extends HttpServlet {
         String age = req.getParameter("userAge");
         try {
             statement = connection.prepareStatement("INSERT INTO users (id,first_name,second_name,age)" +
-                    " values DEFAULT,first_name=?,second_name=?,age=?");
+                    " values (DEFAULT,first_name=?,second_name=?,age=?)");
             statement.setString(1, firstName);
             statement.setString(2, secondName);
             statement.setInt(3, Integer.parseInt(age));
